@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#049a35" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="icon" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <title>Sağ Fidancılık · Logo Ekle</title>
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <span class="dot"></span>
+      <h1>Sağ Fidancılık <small>Logo Ekle</small></h1>
+    </header>
+
+    <main>
+      <div class="left">
+        <div class="stage">
+          <canvas id="canvas" hidden></canvas>
+          <label class="empty" id="empty" for="photoInput">
+            <span class="big">📷</span>
+            <span>Fotoğraf seç</span>
+            <small>Galeriden ya da kameradan</small>
+          </label>
+        </div>
+        <p class="hint" id="hint" hidden>Logoyu parmağınla sürükle · iki parmakla büyüt/küçült</p>
+      </div>
+
+      <section class="panel">
+        <div class="row">
+          <label class="btn" for="photoInput">📷 Fotoğraf</label>
+          <button class="btn primary" id="saveBtn" disabled>⬇ Kaydet</button>
+        </div>
+
+        <div class="field">
+          <div class="lbl"><span>Boyut</span><output id="sizeOut"></output></div>
+          <input type="range" id="size" min="5" max="90" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="lbl"><span>Şeffaflık</span><output id="opacityOut"></output></div>
+          <input type="range" id="opacity" min="10" max="100" step="1" />
+        </div>
+
+        <div class="field">
+          <div class="lbl"><span>Renk</span></div>
+          <div class="swatches" id="colors">
+            <button class="swatch" data-color="yesil"><i style="background:#049a35"></i>Yeşil</button>
+            <button class="swatch" data-color="beyaz"><i style="background:#fff"></i>Beyaz</button>
+            <button class="swatch" data-color="siyah"><i style="background:#111"></i>Siyah</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl toggle">
+            <span>Gölge</span>
+            <input type="checkbox" id="shadow" />
+          </label>
+          <input type="range" id="shadowStr" min="0" max="100" step="1" />
+        </div>
+
+        <div class="row">
+          <label class="btn ghost" for="logoInput">Logoyu değiştir</label>
+          <button class="btn ghost" id="resetBtn">Sıfırla</button>
+        </div>
+      </section>
+    </main>
+
+    <input class="sr" type="file" id="photoInput" accept="image/*" />
+    <input class="sr" type="file" id="logoInput" accept="image/*" />
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
